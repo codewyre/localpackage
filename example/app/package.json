@@ -1,0 +1,13 @@
+{
+  "name": "@codewyre/localpackage-example-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "cw-localpackage preinstall",
+    "postinstall": "cw-localpackage postinstall"
+  },
+  "dependencies": {
+    "@codewyre/localpackage-example-lib": "^1.0.0"
+  }
+}

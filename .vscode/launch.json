@@ -1,0 +1,27 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Via Yarn (Local)",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "runtimeExecutable": "yarn",
+      "args": ["--force", "--force-local", "--verbose"],
+      "outputCapture": "std",
+      "cwd": "/Users/marco/source/github.com/Hobart2967/shoplet/library/composition",
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ],
+      "env": {
+        "TEST_PACKAGE": "/Users/marco/source/github.com/Hobart2967/shoplet/library/composition"
+      },
+      "envFile": "${workspaceFolder}/.vscode/.env"
+    }
+  ]
+}
