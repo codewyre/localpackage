@@ -40,6 +40,35 @@ You can now run the added `--force-local` switch, using `yarn --force-local` in 
 yarn --force --force-local
 ```
 
+### Skipping --force-local flag
+
+#### Environment variable
+
+To always install packages locally, provide an environment variable:
+
+```sh
+export CW_LOCALPACKAGE_ALWAYS_FORCE_LOCAL=1
+```
+
+#### Setting force-local in config file
+
+You can also create a `.localpackage.js` file in your workspace root to configure the enforcing.
+**Pro-Tip: Add the `.localpackage.js` file to your `.gitignore`, so your CI would build the project with public references instead of local ones.**
+
+```js
+// [yarn-workspace-root]/.localpackage.js
+
+// Use these lines for without having "type": "module" in workspace's package.json
+module.exports = {
+  alwaysForceLocal: true
+}
+
+// Use these lines for WITH having "type": "module" in workspace's package.json
+export default {
+  alwaysForceLocal: true
+}
+```
+
 ## Details
 
 If you would have a situation like above, meaning you have a local library that you actively develop and e.g. an application that references it - Then you would have to `yarn link` here and `yarn link` there, always causing manual effort when building, installing the workspace, etc.
